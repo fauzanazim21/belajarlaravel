@@ -1,4 +1,4 @@
-@extends('page')
+@extends('layout.master')
 @section('judul')
 Add Account
 @endsection
