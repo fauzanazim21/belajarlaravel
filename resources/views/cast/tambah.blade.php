@@ -4,7 +4,7 @@ Add Account
 @endsection
 @section('content')
 
-<form action="/tambah" method="POST">
+<form action="/add_action" method="POST">
   @csrf
   <div class="form-group">
     <label>Nama</label>
@@ -15,14 +15,14 @@ Add Account
   @enderror
   <div class="form-group">
     <label>Umur</label>
-    <input type="text" name="umur" class="form-control" placeholder="Umur">
+    <input type="number" name="umur" class="form-control" placeholder="Umur">
   </div>
   @error('umur')
     <div class="alert alert-danger">{{ $message }}</div>
   @enderror
   <div class="form-group">
     <label>Bio</label>
-    <input type="text" name="bio" class="form-control" placeholder="Bio">
+    <textarea type="text" name="bio" class="form-control" placeholder="Bio"></textarea>
   </div>
   @error('bio')
     <div class="alert alert-danger">{{ $message }}</div>
@@ -31,3 +31,4 @@ Add Account
 </form>
 
 @endsection
+

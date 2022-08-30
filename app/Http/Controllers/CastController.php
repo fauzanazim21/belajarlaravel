@@ -12,7 +12,7 @@ class CastController extends Controller
       return view('cast.tambah');
     }
 
-    public function store(Request $request)
+    public function action(Request $request)
     {
       $request->validate([
         'nama' => 'required',
@@ -35,7 +35,6 @@ class CastController extends Controller
     public function index()
     {
       $cast = cast::all();
-
       return view ('cast.tampil', compact('cast'));
     }
 
@@ -48,9 +47,9 @@ class CastController extends Controller
 
     public function edit($id)
     {
-      $castdetail = cast::find($id);
+      $castedit = cast::find($id);
 
-      return view ('cast.edit', compact('castdetail'));
+      return view ('cast.edit', compact('castedit'));
     }
 
     public function update($id, Request $request)

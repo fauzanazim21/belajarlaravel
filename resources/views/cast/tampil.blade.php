@@ -2,14 +2,15 @@
 @section('judul')
 Add Cast
 @endsection
+
 @section('content')
 <a href="/cast/create" class="btn btn-primary btn-sm my-2">Add Cast</a>
 
-
 <table class="table">
+  <table id="example2" class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">No.</th>
       <th scope="col">Nama</th>
       <th scope="col">Umur</th>
       <th scope="col">Bio</th>
@@ -23,8 +24,7 @@ Add Cast
           <td>{{$item->nama}}</td>
           <td>{{$item->umur}}</td>
           <td>{{$item->bio}}</td>
-          <td>
-            
+          <td class="text-nowrap">
             <form action="/cast/{{$item->id}}" method="POST">
               @csrf
               @method('delete')

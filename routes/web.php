@@ -20,7 +20,7 @@ Route::get('/datatable','IndexController@datatable');
 /* link form add */
 Route::get('cast/create', 'CastController@create');
 /* link input database */
-Route::post('/tambah', 'CastController@store');
+Route::post('/add_action', 'CastController@action');
 
 /* link read data */
 Route::get('/cast', 'CastController@index');
