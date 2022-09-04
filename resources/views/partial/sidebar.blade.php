@@ -6,7 +6,14 @@
         <img src="{{asset('template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        @auth
+        <a href="#" class="d-block">{{ Auth::user()->name}}</a>
+        @endauth
+        @guest
+
+        <a href="#" class="d-block">Belum Login</a>
+
+        @endguest
       </div>
     </div>
 
@@ -40,11 +47,29 @@
           <a href="/cast" class="nav-link {{(request()->is('/cast')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-th "></i>
               <p>
-              cast
+              Cast
               <span class="right badge badge-danger">New</span>
               </p>
           </a>
-          </li>
+        </li>
+        <li class="nav-item">
+          <a href="/genre" class="nav-link {{(request()->is('/genre')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-th "></i>
+              <p>
+              Genre
+              <span class="right badge badge-danger">Genre</span>
+              </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/film" class="nav-link {{(request()->is('/film')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-th "></i>
+              <p>
+              Film
+              <span class="right badge badge-success">new</span>
+              </p>
+          </a>
+        </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -62,6 +87,18 @@
             </li>
           </ul>
         </li>
+        {{-- logout --}}
+        <li class="nav-item bg-danger">
+              <a class="nav-link" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                  Log Out
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+      </li>
         
       </ul>
     </nav>
