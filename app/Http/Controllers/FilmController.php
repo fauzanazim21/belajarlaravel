@@ -109,7 +109,12 @@ class FilmController extends Controller
 
     public function destroy($id)
     {
-      $film = film::find($id)->delete();
+      $film = film::find($id);
+
+      $path = "image/";
+      file::delete($path . $film->poster);
+
+      $film->delete();
 
       return redirect('/film');
     }

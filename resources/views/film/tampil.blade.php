@@ -16,7 +16,8 @@ Add film
     <p class="card-text">{{$item->ringkasan}}</p>
     <p class="card-text">{{$item->tahun}}</p>
     <a href="/film/{{$item->id}}" class="btn btn-primary">read more</a>
-    <a href="/film/{{$item->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+    <a href="/film/{{$item->id}}/edit" class="btn btn-warning btn-sm">Edit</a>  
+    <input type="submit" value="Delete" class="btn btn-danger btn-sm">
   </div>
 </div>
 </div>
