@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\film;
 use App\genre;
-use file; 
+use File; 
 
 class FilmController extends Controller
 {
@@ -85,7 +85,7 @@ class FilmController extends Controller
 
       if ($request->has('poster')){
         $path = "image/";
-        file::delete($path . $film->poster);
+        File::delete($path . $film->poster);
 
         $NamaPoster = time().'.'.$request->poster->extension();
 
