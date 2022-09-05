@@ -13,4 +13,8 @@ class Film extends Model
         return $this->belongsTo('App\Genre','genre_id');
     }
 
+    public function kritikdetail(){
+        return $this->hasMany('App\Kritik','film_id');
+    }
+
 }

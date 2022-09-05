@@ -17,6 +17,23 @@ Detail Film
 
   <hr>
 
+  {{-- mengambil compact dari detail film kemudian mengambil model film dengan function kritik --}}
+  @forelse ($filmdetail->kritikdetail as $item)
+    <div class="card">
+      <div class="card-header">
+        {{$item->user->name}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Point{{$item->point}}</h5>
+        <p class="card-text">{{$item->content}}</p>
+      </div>
+    </div> 
+  @empty
+    <h2>belum ada kritik</h2>  
+  @endforelse
+
+  <hr>
+
   {{-- add kritik --}}
   <form action="/kritik" method="post" class="mt-4">
     @csrf

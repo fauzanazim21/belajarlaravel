@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\film;
 use App\genre;
+use App\kritik;
 use File; 
 
 class FilmController extends Controller
