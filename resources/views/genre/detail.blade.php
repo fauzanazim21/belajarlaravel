@@ -5,14 +5,14 @@ Detail Genre
 @section('content')
 <p>{{$genredetail->nama}}</p>
 
-{{-- <div class="row">
-@forelse ($filmdetail->film as $item)
+<div class="row">
+@forelse ($genredetail->film as $item)
     <div class="col-4">
         <div class="card">
-            <img class="card-img-top" src="{{asset('image/'.$item->$gambar)}}" alt="Card image cap">
+            <img class="card-img-top" src="{{asset('image/'.$item->poster)}}" alt="Card image cap">
             <div class="card-body">
-              <h2> {{$item->$judul}} </h2>
-              <p class="card-text">{{$item->$ringkasan}}</p>
+              <h2> {{$item->judul}} </h2>
+              <p class="card-text">{{$item->ringkasan}}</p>
               <a href="/film/{{$item->id}}" class="btn btn-primary">read more</a>
             </div>
         </div>
@@ -20,7 +20,7 @@ Detail Genre
 @empty
     <h2>Tidak ada film di genre ini</h2>
 @endforelse
-</div> --}}
+</div>
 
 <a href="/genre" class="btn btn-secondary btn-sm">Back</a>
 

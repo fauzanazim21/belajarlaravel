@@ -15,6 +15,7 @@ Add film
           <h2> {{$item->judul}} </h2>
           <p class="card-text">{{$item->ringkasan}}</p>
           <p class="card-text">{{$item->tahun}}</p>
+          <p class="card-text">{{$item->genre_id}}</p>
           <form action="/film/{{$item->id}}" method="POST">
             @csrf
             @method('DELETE')

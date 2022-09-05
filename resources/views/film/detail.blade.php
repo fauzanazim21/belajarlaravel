@@ -9,6 +9,7 @@ Detail Film
       <h2> {{$filmdetail->judul}} </h2>
       <p class="card-text">{{$filmdetail->ringkasan}}</p>
       <p class="card-text">{{$filmdetail->tahun}}</p>
+      <p class="card-text">{{$filmdetail->genre_id}}</p>
       <a href="/film" class="btn btn-secondary btn-sm">Back</a>
     </div>
   </div>
