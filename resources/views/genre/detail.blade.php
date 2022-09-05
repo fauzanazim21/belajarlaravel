@@ -13,7 +13,8 @@ Detail Genre
             <div class="card-body">
               <h2> {{$item->judul}} </h2>
               <p class="card-text">{{$item->ringkasan}}</p>
-              <a href="/film/{{$item->id}}" class="btn btn-primary">read more</a>
+              <a href="/film/{{$item->id}}" class="btn btn-primary">Detail</a>
+              <span class="badge badge-primary">{{$item->genre->nama}}</span> 
             </div>
         </div>
     </div>    

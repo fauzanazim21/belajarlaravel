@@ -10,12 +10,12 @@ Add film
   @forelse ($film as $item)
     <div class="col-4">
       <div class="card">
-        <img src="{{asset('image/'. $item->poster)}}" alt="Card image cap" alt="...">
+        <img src="{{asset('image/'. $item->poster)}}" style="height:120px" alt="Card image cap" alt="...">
         <div class="card-body">
           <h2> {{$item->judul}} </h2>
           <p class="card-text">{{$item->ringkasan}}</p>
           <p class="card-text">{{$item->tahun}}</p>
-          <p class="card-text">{{$item->genre_id}}</p>
+          <p class="card-text">{{$item->genre->nama}}</p>
           <form action="/film/{{$item->id}}" method="POST">
             @csrf
             @method('DELETE')

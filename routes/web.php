@@ -79,5 +79,8 @@ Route::delete('/film/{film_id}', 'FilmController@destroy');
 
 Route::resource('cast','CastController');
 
+// kritik
+Route::post('kritik','KritikController@action');
+
 
 Auth::routes();
