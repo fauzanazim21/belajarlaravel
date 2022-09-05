@@ -7,8 +7,7 @@ use App\Genre;
 
 
 class GenreController extends Controller
-{
-  
+  { 
     public function create()
     {
       return view('genre.tambah');
@@ -19,8 +18,9 @@ class GenreController extends Controller
       $request->validate([
         'nama' => 'required',
     ]);
+    
 
-    $genre = new genre;
+    $genre = new Genre;
 
     $genre->nama = $request->nama;
 

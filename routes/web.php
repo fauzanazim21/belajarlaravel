@@ -40,7 +40,7 @@ Route::delete('/cast/{cast_id}', 'CastController@destroy');
 /* link form add */
 Route::get('genre/create', 'GenreController@create');
 /* link input database */
-Route::post('/add_action', 'GenreController@action');
+Route::post('/add_action_genre', 'GenreController@action');
 
 /* link read data */
 Route::get('/genre', 'GenreController@index');
@@ -59,7 +59,7 @@ Route::delete('/genre/{genre_id}', 'GenreController@destroy');
 /* link form add */
 Route::get('film/create', 'FilmController@create');
 /* link input database */
-Route::post('/add_action', 'FilmController@action');
+Route::post('/add_action_film', 'FilmController@action');
 
 /* link read data */
 Route::get('/film', 'FilmController@index');

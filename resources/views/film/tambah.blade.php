@@ -4,7 +4,7 @@ Add Film
 @endsection
 @section('content')
 
-<form action="/add_action" method="POST" enctype="multipart/form-data">
+<form action="/add_action_film" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
     <label>Judul</label>

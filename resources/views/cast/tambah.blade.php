@@ -4,7 +4,7 @@ Add Account
 @endsection
 @section('content')
 
-<form action="/add_action" method="POST">
+<form action="/add_action" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
     <label>Nama</label>

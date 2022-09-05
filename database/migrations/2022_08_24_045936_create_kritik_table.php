@@ -16,7 +16,7 @@ class CreateKritikTable extends Migration
         Schema::create('kritik', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('film_id');
             $table->foreign('film_id')->references('id')->on('film');
             $table->string('content');

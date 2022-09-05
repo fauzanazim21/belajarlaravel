@@ -1,10 +1,10 @@
 @extends('layout.master')
 @section('judul')
-Add Account
+Add Genre
 @endsection
 @section('content')
 
-<form action="/add_action" method="POST">
+<form action="/add_action_genre" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
     <label>Nama</label>

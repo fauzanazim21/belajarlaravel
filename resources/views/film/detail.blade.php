@@ -10,12 +10,15 @@ Detail Film
       <p class="card-text">{{$filmdetail->ringkasan}}</p>
       <p class="card-text">{{$filmdetail->tahun}}</p>
       <p class="card-text">{{$filmdetail->genre->nama}}</p>
+      <p class="card-text">{{$filmdetail->id}}</p>
       <a href="/film" class="btn btn-secondary btn-sm">Back</a>
     </div>
   </div>
 
+  <hr>
+
   {{-- add kritik --}}
-  <form action="" method="post">
+  <form action="/kritik" method="post" class="mt-4">
     @csrf
     <div class="form-group">
         <select name="point" class="form-control" id="">
@@ -31,11 +34,13 @@ Detail Film
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
     <div class="form-group">
+      <input type="hidden" value="{{$filmdetail->id}}" name="film_id">
       <textarea name="content" cols="30" rows="10" class="form-control" placeholder="isi kritik">{{old('content')}}</textarea>
     </div>  
     @error('content')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
+    <input type="submit" class="btn btn-primary" value="Post Kritik">
   </form>  
 
 
